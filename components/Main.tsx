@@ -69,7 +69,7 @@ const Main = () => {
                         </Text>
                     </a>
                 </div>
-                <div className="grid grid-cols-1 gap-10 py-4 md:grid-cols-3">
+                <div className="grid grid-cols-1 gap-5 py-4 md:grid-cols-3 md:gap-7 xl:gap-10">
                     {gasPriceData.map(({ label, gweiPrice, usdPrice, colorClass }) => (
                         <GasPriceCard
                             key={label}
