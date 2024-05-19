@@ -41,7 +41,7 @@ const useLatestBlocks = () => {
     return useQuery({
         queryKey: ["latestBlocks"],
         queryFn: fetchLatestBlocks,
-        refetchInterval: 30000,
+        refetchInterval: 45000,
     });
 };
 
