@@ -21,8 +21,6 @@ describe("Navbar Component", () => {
 
         render(<Navbar />);
 
-        screen.debug(); // Log the DOM structure for debugging
-
         const titleElement = screen.getByText(/Gas Tracker/i);
         expect(titleElement).toBeInTheDocument();
     });
@@ -36,8 +34,6 @@ describe("Navbar Component", () => {
 
         render(<Navbar />);
 
-        screen.debug(); // Log the DOM structure for debugging
-
         const titleElement = screen.getByText(/Gas Tracker/i);
         expect(titleElement).toBeInTheDocument();
     });
@@ -50,8 +46,6 @@ describe("Navbar Component", () => {
         });
 
         render(<Navbar />);
-
-        screen.debug(); // Log the DOM structure for debugging
 
         const titleElement = screen.getByText(/Gas Tracker/i);
         const ethPriceElement = screen.getByText((content, element) => {
@@ -74,8 +68,6 @@ describe("Navbar Component", () => {
         });
 
         render(<Navbar />);
-
-        screen.debug(); // Log the DOM structure for debugging
 
         const titleElement = screen.getByText(/Gas Tracker/i);
         const ethPriceElement = screen.getByText((content, element) => {
