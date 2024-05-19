@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    env: {
+        ETHERSCAN_API_KEY: process.env.ETHERSCAN_API_KEY,
+    }
+};
 
 export default nextConfig;

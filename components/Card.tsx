@@ -11,7 +11,7 @@ interface GasPriceCardProps {
 
 const GasPriceCard: React.FC<GasPriceCardProps> = ({ label, gweiPrice, usdPrice, colorClass, isLoading }) => {
     const gasInGwei = () => {
-        if (isLoading) {
+        if (isLoading || !gweiPrice) {
             return <SkeletonBox height="h-3 md:h-4 lg:h-4.5 2xl:h-5" width="w-16" bgColor="light" className="my-2" data-testid="skeleton-gwei" />;
         }
 

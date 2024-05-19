@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const fetchGasPrices = async () => {
-    const apiKey = "8DNB3TBGI4ZKX5YJAGSN33QFDVYS4NMD7R";
+    const apiKey = process.env.ETHERSCAN_API_KEY;
     if (!apiKey) {
         throw new Error("API key is not defined");
     }
