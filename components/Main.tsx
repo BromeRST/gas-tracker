@@ -5,13 +5,34 @@ import GasPriceCard from "./Card";
 import { useMemo } from "react";
 import { useGasPrice } from "@/context/GasPriceContext";
 import MaxWidthWrapper from "./common/MaxWidthWrapper";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.6,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 1,
+        },
+    },
+};
 
 const Main = () => {
     const { gasPrices, ethData, isLoading, countdownGas } = useGasPrice();
 
     const gasLimit = 21000; // Typical gas limit for a simple ETH transfer
 
-    // Ensure gasPrices and ethData are numbers
     const gweiToEth = 1e-9;
     const ethPrice = Number(ethData?.usd);
 
@@ -69,18 +90,18 @@ const Main = () => {
                         </Text>
                     </a>
                 </div>
-                <div className="grid grid-cols-1 gap-5 py-4 md:grid-cols-3 md:gap-7 xl:gap-10">
+                <motion.div
+                    className="grid grid-cols-1 gap-5 py-4 md:grid-cols-3 md:gap-7 xl:gap-10"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show"
+                >
                     {gasPriceData.map(({ label, gweiPrice, usdPrice, colorClass }) => (
-                        <GasPriceCard
-                            key={label}
-                            label={label}
-                            gweiPrice={gweiPrice}
-                            usdPrice={usdPrice}
-                            colorClass={colorClass}
-                            isLoading={isLoading}
-                        />
+                        <motion.div key={label} variants={itemVariants}>
+                            <GasPriceCard label={label} gweiPrice={gweiPrice} usdPrice={usdPrice} colorClass={colorClass} isLoading={isLoading} />
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </MaxWidthWrapper>
         </div>
     );
