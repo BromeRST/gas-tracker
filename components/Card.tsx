@@ -1,10 +1,9 @@
-import React from "react";
 import Text from "./common/Text";
 import SkeletonBox from "./common/SkeletonBox";
 
 interface GasPriceCardProps {
     label: string;
-    gweiPrice: number | string;
+    gweiPrice: string | undefined;
     usdPrice: number;
     colorClass: string;
     isLoading: boolean;
@@ -13,7 +12,7 @@ interface GasPriceCardProps {
 const GasPriceCard: React.FC<GasPriceCardProps> = ({ label, gweiPrice, usdPrice, colorClass, isLoading }) => {
     const gasInGwei = () => {
         if (isLoading) {
-            return <SkeletonBox height="h-3 md:h-4 lg:h-4.5 2xl:h-5" width="w-16" bgColor="light" className="my-2" />;
+            return <SkeletonBox height="h-3 md:h-4 lg:h-4.5 2xl:h-5" width="w-16" bgColor="light" className="my-2" data-testid="skeleton-gwei" />;
         }
 
         return (
@@ -25,7 +24,7 @@ const GasPriceCard: React.FC<GasPriceCardProps> = ({ label, gweiPrice, usdPrice,
 
     const gasInUsd = () => {
         if (isLoading || isNaN(usdPrice)) {
-            return <SkeletonBox height="h-2 md:h-3 lg:h-3.5" width="w-20" bgColor="medium" />;
+            return <SkeletonBox height="h-2 md:h-3 lg:h-3.5" width="w-20" bgColor="medium" data-testid="skeleton-usd" />;
         }
 
         return (

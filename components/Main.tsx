@@ -2,10 +2,12 @@
 
 import Text from "./common/Text";
 import GasPriceCard from "./Card";
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 import { useGasPrice } from "@/context/GasPriceContext";
 import MaxWidthWrapper from "./common/MaxWidthWrapper";
 import { motion } from "framer-motion";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -29,7 +31,13 @@ const itemVariants = {
 };
 
 const Main = () => {
-    const { gasPrices, ethData, isLoading, countdownGas } = useGasPrice();
+    const { gasPrices, ethData, isLoading, error, countdownGas } = useGasPrice();
+
+    useEffect(() => {
+        if (error) {
+            toast.error(`Error: ${error.message}`);
+        }
+    }, [error]);
 
     const gasLimit = 21000; // Typical gas limit for a simple ETH transfer
 
@@ -103,6 +111,7 @@ const Main = () => {
                     ))}
                 </motion.div>
             </MaxWidthWrapper>
+            <ToastContainer />
         </div>
     );
 };

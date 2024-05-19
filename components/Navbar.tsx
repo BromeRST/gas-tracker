@@ -5,10 +5,10 @@ import Text from "./common/Text";
 import MaxWidthWrapper from "./common/MaxWidthWrapper";
 
 const Navbar = () => {
-    const { ethData, isLoading } = useGasPrice();
-    const isNegative = ethData?.usd_24h_change < 0;
+    const { ethData, isLoading, error } = useGasPrice();
+    const isNegative = (ethData?.usd_24h_change as number) < 0;
 
-    if (isLoading) {
+    if (isLoading || error) {
         return (
             <div className="relative z-10 flex h-14 w-full items-center bg-white px-5 shadow-medium md:h-[85px] md:px-12 lg:px-16 xl:px-20">
                 <Text size="h5" color="text-black">

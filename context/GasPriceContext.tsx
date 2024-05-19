@@ -1,13 +1,6 @@
 import React, { createContext, useContext, ReactNode } from "react";
 import useGasAndEthPrice from "@/hooks/useGasAndEthPrice";
-
-interface GasPriceContextProps {
-    gasPrices: any;
-    ethData: any;
-    isLoading: boolean;
-    error: any;
-    countdownGas: number;
-}
+import { GasPriceContextProps } from "@/lib/types";
 
 const GasPriceContext = createContext<GasPriceContextProps | undefined>(undefined);
 

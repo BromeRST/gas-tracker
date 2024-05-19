@@ -24,3 +24,22 @@ export type TextSizeType =
     | "caption1"
     | "caption2"
     | "caption3";
+
+export interface GasPrices {
+    SafeGasPrice: string;
+    ProposeGasPrice: string;
+    FastGasPrice: string;
+}
+
+export interface EthData {
+    usd: number;
+    usd_24h_change: number;
+}
+
+export interface GasPriceContextProps {
+    gasPrices: GasPrices | undefined;
+    ethData: EthData | undefined;
+    isLoading: boolean;
+    error: any;
+    countdownGas: number;
+}
