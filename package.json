@@ -14,6 +14,7 @@
     "@tanstack/react-query": "^5.37.1",
     "@tsconfig/next": "^2.0.3",
     "axios": "^1.6.8",
+    "ethers": "^6.12.1",
     "framer-motion": "^11.2.4",
     "next": "14.2.3",
     "prettier": "^3.2.5",

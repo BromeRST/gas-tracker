@@ -43,3 +43,28 @@ export interface GasPriceContextProps {
     error: any;
     countdownGas: number;
 }
+
+export interface Block {
+    baseFeePerGas: string;
+    gasLimit: string;
+    gasUsed: string;
+    hash: string;
+    miner: string;
+    number: string;
+    timestamp: string;
+    transactions: Transaction[];
+    uncles: string[];
+    withdrawals: Withdrawal[];
+}
+
+export interface Transaction {
+    gas: string;
+    gasPrice: string;
+}
+
+export interface Withdrawal {
+    index: string;
+    validatorIndex: string;
+    address: string;
+    amount: string;
+}

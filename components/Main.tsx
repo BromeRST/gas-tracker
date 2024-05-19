@@ -8,6 +8,8 @@ import MaxWidthWrapper from "./common/MaxWidthWrapper";
 import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LatestBlocks from "./LatestBlocks";
+import useErrorHandler from "@/hooks/useErrorHandler";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -32,15 +34,9 @@ const itemVariants = {
 
 const Main = () => {
     const { gasPrices, ethData, isLoading, error, countdownGas } = useGasPrice();
-
-    useEffect(() => {
-        if (error) {
-            toast.error(`Error: ${error.message}`);
-        }
-    }, [error]);
+    useErrorHandler(error);
 
     const gasLimit = 21000; // Typical gas limit for a simple ETH transfer
-
     const gweiToEth = 1e-9;
     const ethPrice = Number(ethData?.usd);
 
@@ -110,6 +106,7 @@ const Main = () => {
                         </motion.div>
                     ))}
                 </motion.div>
+                <LatestBlocks />
             </MaxWidthWrapper>
             <ToastContainer />
         </div>
