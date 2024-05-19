@@ -2,15 +2,17 @@
 
 ## Overview
 
-Ethereum Gas Tracker is a web application that allows users to monitor the current gas prices for Ethereum transactions. The app provides real-time data on gas prices in Gwei and their equivalent cost in USD. The data is fetched from the Etherscan and CoinGecko APIs.
-The Gas price in Gwei is updated every 10 seconds, while the ETH price is updated every 90 seconds to ensure that the information is up-to-date and at the same time, the app is not making too many requests to the APIs.
+Ethereum Gas Tracker is a web application that provides real-time tracking of Ethereum gas prices and the latest blocks mined on the Ethereum blockchain. The app displays the gas prices in different tiers (Low, Average, High) along with their respective costs in USD, as well as information about the latest 3 blocks mined, including the block number, time since it was mined, the number of transactions in the block, and the miner address.
 
 ## Features
 
--   **Real-time Gas Prices**: Displays the current Safe, Propose, and Fast gas prices in Gwei.
--   **USD Conversion**: Shows the equivalent cost of gas prices in USD.
--   **ETH Price Tracker**: Displays the current price of Ethereum and its 24-hour change.
--   **Responsive Design**: The app is fully responsive and works on all device sizes.
+-   **Real-Time Gas Prices**: Track the Ethereum gas prices for Low, Average, and High tiers.
+-   **Transaction Cost**: Display the transaction cost in USD for each gas price tier.
+-   **Latest Blocks**: View information about the latest 3 blocks mined, including:
+    -   Block number
+    -   Time since the block was mined
+    -   Number of transactions in the block
+    -   Miner address with a link to Etherscan
 
 ## Getting Started
 
