@@ -36,11 +36,8 @@ The Gas price in Gwei is updated every 10 seconds, while the ETH price is update
 
     or
 
-    s ```bash
+    ```bash
     yarn
-
-    ```
-
     ```
 
 ### Environment Variables
