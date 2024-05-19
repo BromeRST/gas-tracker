@@ -18,7 +18,7 @@ Ethereum Gas Tracker is a web application that provides real-time tracking of Et
 
 ### Prerequisites
 
--   Node.js (version 14 or later)
+-   Node.js (version 18.17.0 or later)
 -   npm or yarn
 
 ### Installation
