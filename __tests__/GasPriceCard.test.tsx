@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import GasPriceCard from "@/components/Card";
+import GasPriceCard from "@/components/Card/GasPriceCard";
 
 describe("GasPriceCard Component", () => {
     it("renders gas price information when not loading", async () => {

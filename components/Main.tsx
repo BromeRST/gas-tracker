@@ -1,15 +1,15 @@
 "use client";
 
 import Text from "./common/Text";
-import GasPriceCard from "./Card";
-import { useMemo, useEffect } from "react";
+import { useMemo } from "react";
 import { useGasPrice } from "@/context/GasPriceContext";
 import MaxWidthWrapper from "./common/MaxWidthWrapper";
 import { motion } from "framer-motion";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LatestBlocks from "./LatestBlocks";
 import useErrorHandler from "@/hooks/useErrorHandler";
+import GasPriceCard from "./Card";
 
 const containerVariants = {
     hidden: { opacity: 0 },
